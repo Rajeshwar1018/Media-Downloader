@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  
+        <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+              <!-- ===== CSS ===== -->
+              <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+              <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+              <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+      <title>Media Downloader</title>
+      
+      
+      </head>
+      
+      <body>
+          
+          <nav class="navbar">
+              <div class="content">
+                <div class="logo">
+                  <a href="#">Media Downloader</a>
+                </div>
+                <ul class="menu-list">
+                  <div class="icon1 cancel-btn">
+                    <i class="fas fa-times"></i>
+                  </div>
+                  <div class="wrapper">
+          
+                     <div class="icon facebook">
+                        <div class="tooltip">Facebook</div>
+                     <a href="/"><i class="fab fa-facebook-f"></i></a>
+                     </div>
+          
+                     <div class="icon twitter">
+                        <div class="tooltip">Twitter</div>
+                     <a href="/twitter"><i class="fab fa-twitter"></i></a>
+                     </div>
+          
+                     <div class="icon instagram">
+                        <div class="tooltip">Instagram</div>
+                     <a href="/insta"><i class="fab fa-instagram"></i></a>
+                     </div>
+          
+                     
+          
+                     <div class="icon youtube">
+                       <div class="tooltip">YouTube</div>
+                     <a href="/yt"><i class="fab fa-youtube"></i></a>
+                     </div>
+                  </div>
+                </ul>
+                <div class="icon1 menu-btn">
+                  <i class="fas fa-bars"></i>
+                </div>
+              </div>
+            </nav>
+      
+      <!-- ===== IONICONS ===== -->
+      
+      
+      <!--===== MAIN JS =====-->
+      <script src="{{url_for('static', filename='main.js')}}"></script>
+      
+        
+      <div>
+          <form action="/download3" method="post">
+            <h1 class="webtitle">Twitter Downloader <br> <p class="websub">Download Video & Audio From Twitter.</p></h1><br>
+       
+            <input type ="text" name = "url" placeholder = "Enter Video Url...." required>
+            <input type ="submit" name = "submit" value = "GO">
+         </form>
+      </div>
+
+{% block content %}
+
+{% endblock %}
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">About</h2>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Media Downloader Website</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">You can download videos from popular social media platforms like Youtube, Facebook, Instagram, Twitter. In This Webste it is easy to download videos by just pasting video post url and click on download button to download.</p>
+    </div>
+    <div class="flex flex-wrap">
+      <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+        <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Facebook Downloader</h2>
+        <p class="leading-relaxed text-base mb-4">Download Facebook Video From This Website By Pasting Facebook Post Video Link.</p>
+        <a href="/" class="text-indigo-500 inline-flex items-center">Click Here
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+        <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Twitter Downloader</h2>
+        <p class="leading-relaxed text-base mb-4">Download Twitter Video From This Website By Pasting Twitter Post Video Link.</p>
+        <a href="/twitter" class="text-indigo-500 inline-flex items-center">Click Here
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+        <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">Instagram Downloader</h2>
+        <p class="leading-relaxed text-base mb-4">Download Instagram Video From This Website By Pasting Instagram Post Video Link.</p>
+        <a href="/insta" class="text-indigo-500 inline-flex items-center">Click Here
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+        <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">YouTube Downloader</h2>
+        <p class="leading-relaxed text-base mb-4">Download YouTube Video From This Website By Pasting YouTube Video Link.</p>
+        <a href="/yt" class="text-indigo-500 inline-flex items-center">Click Here
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  
+  </div>
+</section>
+<footer>
+<p style="text-align: center;">© 2021 MediaDownloader —  @ProjectWork &nbsp; Done By CME A 18124-CM-20, 18124-CM-34, 18124-CM-03, 18124-CM-36</p>
+</footer>
+<br>
+        
+
+      <script src="{{url_for('static', filename='main1.js')}}"></script>
+      
+      </body>
+</html>

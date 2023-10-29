@@ -1,0 +1,95 @@
+{% extends 'yt.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+ 
+<img class="ytthumbnail" src="{{ context["thumb"] }}">
+
+<p class="yttitle">Video Title : {{ context["title"] }}</p>
+            
+<section class="infos">
+
+    <li>Duration : <b>{{ context["duration"] }}</b></li>
+    <li>Views : <b>{{ context["views"] }}</b></li>
+    <li>Likes : <b>{{ context["likes"] }}</b></li>
+    <li>Dislikes : <b>{{ context["dislikes"] }}</b</li>
+
+</section>
+ 
+<br>
+<br>
+<br>
+<br>
+<div class="howtodownload">       
+  <span>Q: How to download video? What to do, if download doesn't start?</span><br>
+  A: <mark>RIGHT CLICK</mark> the download button, select <mark>SAVE LINK AS...</mark> from the menu.<br>
+  B: Also try press <mark>ALT</mark> and <mark>LEFT CLICK</mark> the download button in Chrome or Edge.
+</div>
+<br>
+<br>
+<br>  
+<table id="table1">
+    <thead >
+    <tr>
+        <th scope="col">Resolution</th>
+        <th scope="col">File Size</th>
+        <th scope="col">Extension</th>
+        <th scope="col">Download</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for stream in streams %}
+        <tr>
+            <td>{{ stream.resolution }}</td>
+            <td>{{ stream.file_size }}</td>
+            <td>{{ stream.extension }}</td>
+            <td><a href="{{ stream.url }}" style="text-decoration: none; color: blue;" download="{{ title }}.{{ extension }}" target="_blank" >Download <i class=" fa fa-download"></i></a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{#                <p >Video Only</p>#}
+{#                <table >#}
+{#                    <thead >#}
+{#                    <tr>#}
+{#                        <th scope="col">Resolution</th>#}
+{#                        <th scope="col">File Size</th>#}
+{#                        <th scope="col">Extension</th>#}
+{#                        <th scope="col">Download</th>#}
+{#                    </tr>#}
+{#                    </thead>#}
+{#                    <tbody>#}
+{#                    {% for stream in stream_video %}#}
+{#                        <tr>#}
+{#                            <td>{{ stream.resolution }}</td>#}
+{#                            <td>{{ stream.file_size }}</td>#}
+{#                            <td>{{ stream.extension }}</td>#}
+{#                            <td><a href="{{ stream.video_url }}" style="text-decoration: none;" download="{{ title }}.{{ extension }}" target="_blank">Download <i class=" fa fa-download"></i></a></td>#}
+{#                        </tr>#}
+{#                    {% endfor %}#}
+{#                    </tbody>#}
+{#                </table>#}
+
+{#                <p>Audio Only</p>#}
+{#                <table>#}
+{#                    <thead>#}
+{#                    <tr>#}
+{#                        <th scope="col">File Size</th>#}
+{#                        <th scope="col">Extension</th>#}
+{#                        <th scope="col">Download</th>#}
+{#                    </tr>#}
+{#                    </thead>#}
+{#                    <tbody>#}
+{#                    {% for stream in stream_audio %}#}
+{#                        <tr>#}
+{#                            <td>{{ stream.file_size }}</td>#}
+{#                            <td>{{ stream.extension }}</td>#}
+{#                            <td><a href="{{ stream.video_url }}" style="text-decoration: none;" download="{{ title }}.{{ extension }}" target="_blank" >Download <i class=" fa fa-download"></i></a></td>#}
+{#                        </tr>#}
+{#                    {% endfor %}#}
+{#                    </tbody>#}
+{#                </table>#}
+
+{% endblock %}
